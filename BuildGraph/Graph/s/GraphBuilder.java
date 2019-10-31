@@ -41,11 +41,15 @@ class GraphBuilder{
 			while(inFile.hasNext())
 			{
 				String line = inFile.nextLine();
+				line=line.trim().replaceAll("\\s{2,}", " ");
 				data =line.split(" ");
-				if (g.getGraphType().contains("WEIGHTED"))
-					list.add(new ArrayList<String>(Arrays.asList(data[0], data[1],data[2])));
-				else
-					list.add(new ArrayList<String>(Arrays.asList(data[0], data[1])));
+				if(data.length>1)
+				{	
+					if (g.getGraphType().contains("WEIGHTED"))
+						list.add(new ArrayList<String>(Arrays.asList(data[0], data[1],data[2])));
+					else
+						list.add(new ArrayList<String>(Arrays.asList(data[0], data[1])));
+				}
 			}
 			inFile.close();
 		
