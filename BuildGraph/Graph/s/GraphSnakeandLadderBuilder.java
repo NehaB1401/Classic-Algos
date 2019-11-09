@@ -1,3 +1,8 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * File Name: GraphSnakeandLadderBuilder.java 
@@ -30,6 +35,49 @@ class GraphSnakeandLadderBuilder{
 	
 	private void buildGraph() {
 		//WRITE YOUR CODE
+		List<ArrayList<Integer>> list=new ArrayList<ArrayList<Integer>>();
+		Map<Integer,Integer> sandl = new HashMap<>();
+		for(int i=0;i<l.length;i++)
+		{
+			if(l[i][0]>l[i][1])
+			{
+				sandl.put(l[i][1], l[i][0]);
+			}
+			else
+				sandl.put(l[i][0], l[i][1]);
+		}
+		for(int i=0;i<s.length;i++)
+		{
+			if(s[i][0]<s[i][1])
+			{
+				sandl.put(s[i][1], s[i][0]);
+			}
+			else
+				sandl.put(s[i][0], s[i][1]);
+		}
+		for(int i=1;i<n;i++)
+		{			
+			int dice = 1;			
+			while(dice<7 && (i+dice)<n+1)
+			{
+				if(sandl.containsKey(i+dice))
+				{
+					list.add(new ArrayList<Integer>(Arrays.asList(i,sandl.get(i+dice))));
+				}
+				else
+					list.add(new ArrayList<Integer>(Arrays.asList(i,(i+dice))));
+				dice++;
+			}
+		}
+		
+		for(List<Integer> input : list) {
+			int from = g.insertOrFind(input.get(0).toString(), false);
+			int to = g.insertOrFind(input.get(1).toString(), false);
+
+			g.createEdge(from, to, 0, true);
+			g.createEdge(to, from, 0, false);
+						
+		}
 	}
 
 	public static void main(String[] args) {

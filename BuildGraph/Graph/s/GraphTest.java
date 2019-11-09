@@ -478,11 +478,11 @@ class GraphTest{
 		//testGraphRepresentation() ;
 
 		
-		testDFS();
-/*		
+//		testDFS();
+		
 		testBFS() ;
 		testSnakeAndLadder();
-		
+	/*	
 		testToplogicalSort() ;
 		testDagLongestPath() ;
 	
