@@ -480,12 +480,12 @@ class GraphTest{
 		
 //		testDFS();
 		
-		testBFS() ;
-		testSnakeAndLadder();
-	/*	
+		//testBFS() ;
+		//testSnakeAndLadder();
+
 		testToplogicalSort() ;
 		testDagLongestPath() ;
-	
+		/*	
 	  testDijkstra() ;
 		
 		testDPShortestPath() ;
