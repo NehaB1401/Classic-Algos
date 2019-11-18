@@ -195,7 +195,7 @@ class GraphTest{
 				String name1 = name + ".txt" ;
 				String dotFile = outputFileBase + name + "tree.dot" ;
 				g.dijkstra(name1,dotFile,sc,e[i],work,cost) ;
-				//u.myassert(cost[0] == w[i]);
+				u.myassert(cost[0] == w[i]);
 			}	
 		}
 	}
@@ -478,16 +478,16 @@ class GraphTest{
 		//testGraphRepresentation() ;
 
 		
-//		testDFS();
+		// testDFS();
 		
 		//testBFS() ;
 		//testSnakeAndLadder();
 
-		testToplogicalSort() ;
-		testDagLongestPath() ;
-		/*	
+		//testToplogicalSort() ;
+		//testDagLongestPath() ;
+			
 	  testDijkstra() ;
-		
+		/*
 		testDPShortestPath() ;
 	
 		testBF() ;
